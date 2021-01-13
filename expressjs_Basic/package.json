@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "init": "^0.1.2",
+    "npm": "^6.14.11"
+  },
+  "name": "expressjs_basic",
+  "version": "1.0.0",
+  "description": "practice expressjs",
+  "main": "app.js",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
