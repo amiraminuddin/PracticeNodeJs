@@ -1,14 +1,19 @@
+const path = require('path');
 const express = require('express');
+
 
 const router = express.Router();
 
 //add middleware function
+//can use same path if method different
+//route /admin/add-product => GET
 router.get('/add-product', (req, res, next) => {
-    res.send('<form action="/product" method="POST"><input type="text" name="title" ><button type="submit">Add product</button></form>')
+    res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'));
 });
 
 //if no request from /add-product, it will redirect to route /
-router.post('/product', (req, res, next) => {
+//route /admin/add-product => POST
+router.post('/add-product', (req, res, next) => {
     console.log(req.body);
     res.redirect('/');
 });

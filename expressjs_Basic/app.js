@@ -1,3 +1,5 @@
+const path = require('path')
+
 //import express
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -10,8 +12,14 @@ const shopRoute = require('./routes/shop.js');
 //register middleware. Parse body sent through form.
 app.use(bodyParser.urlencoded( {extended: false }));
 
-app.use(adminRoute);
+//will request through /admin route
+app.use('/admin',adminRoute);
 app.use(shopRoute);
+
+//adding 404 Error Page
+app.use((req, res, next) =>{
+    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'))
+});
 
 //call for start server using port 3000
 app.listen(3000);
