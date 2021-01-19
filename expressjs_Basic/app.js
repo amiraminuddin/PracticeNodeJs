@@ -11,6 +11,7 @@ const shopRoute = require('./routes/shop.js');
 
 //register middleware. Parse body sent through form.
 app.use(bodyParser.urlencoded( {extended: false }));
+app.use(express.static(path.join(__dirname,'public')))
 
 //will request through /admin route
 app.use('/admin',adminRoute);
