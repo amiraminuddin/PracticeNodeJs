@@ -1,0 +1,26 @@
+
+    <main>
+        {{#if hasProduct }}
+        <div class="grid">
+            {{#each prods}}
+            <article class="card product-item"> 
+                <header class="card__header">
+                    <h1 class="product__title">{{this.title}}</h1>
+                </header>
+                <div class="card__image">
+                    <img src="https://i.pinimg.com/736x/41/28/f5/4128f527823d4e275f9ef7b1da814f53.jpg" alt="">
+                </div>
+                <div class="card__content">
+                    <h1 class="product__price">RM20.10</h1>
+                    <p class="product__description">A very interesting item </p>
+                </div>
+                <div class="card__actions ">
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </article>
+            {{/each}}
+        </div>
+        {{ else }}
+        <h1 class="product__price">NO PRODUCT</h1>
+        {{/if}}
+    </main>
